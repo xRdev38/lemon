@@ -21,6 +21,8 @@ module.exports = {
         ],
 
         // Disallow redundant nesting selectors (& inside selector)
-        "scss/selector-no-redundant-nesting-selector": true
+        "scss/selector-no-redundant-nesting-selector": true,
+        "scss/dollar-variable-colon-space-after": null,
+        "selector-class-pattern": null,
     }
 };

@@ -1,10 +1,9 @@
 // ============================================================================
-// Minimal Reset (inspired by normalize.css + Atlassian)
+// Minimal Reset (based on normalize.css + Atlassian recommendations)
 // ============================================================================
 
-// We need to import token variables here before using them:
-@use "../tokens/typography" as *; // for $font-family-sans, $font-size-md, $line-height-text
-@use "../tokens/colors" as *;     // for $color-text-primary and $color-neutral-100
+@use "../tokens/typography" as *; // for font-family, font-size, line-height
+@use "../tokens/colors" as *;     // for text color, background
 
 *,
 *::before,
@@ -18,7 +17,27 @@ html,
 body {
   font-family: $font-family-sans;
   font-size: $font-size-md;
-  line-height: $line-height-text;
-  color: $color-text-primary;
-  background-color: $color-neutral-100;
+  line-height: $line-height-md;
+  color: $color-text;
+  background-color: $color-background;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }

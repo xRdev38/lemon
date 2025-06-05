@@ -1,8 +1,19 @@
 // ============================================================================
-// Shadow Definitions for Lemon (inspired by Atlassian)
+// Shadow Definitions – Atlassian Design System
+// https://atlassian.design/guidelines/product/foundations/elevation
 // ============================================================================
 
+// No shadow (flat)
 $shadow-0: none !default;
+
+// Subtle shadow for low elevation
 $shadow-1: 0 1px 1px rgb(9 30 66 / 25%) !default;
+
+// Medium shadow for moderate elevation
 $shadow-2: 0 1px 2px rgb(9 30 66 / 31%), 0 0 0 1px rgb(9 30 66 / 8%) !default;
-$shadow-3: 0 1px 3px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%) !default;
+
+// Stronger shadow for higher elevation
+$shadow-3: 0 2px 4px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%) !default;
+
+// Highest elevation (popovers, modals)
+$shadow-4: 0 4px 8px rgb(9 30 66 / 25%), 0 0 0 1px rgb(9 30 66 / 8%) !default;

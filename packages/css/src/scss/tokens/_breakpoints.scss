@@ -1,9 +1,20 @@
 // ============================================================================
-// Breakpoints for Lemon (inspired by Atlassian)
+// Breakpoints – Atlassian Design System
+// https://atlassian.design/guidelines/product/foundations/responsive
+// Values unitless, appended with 'px' via functions
 // ============================================================================
 
-$breakpoint-xs: 0 !default;      // mobile
-$breakpoint-sm: 480 !default;    // small devices
-$breakpoint-md: 768 !default;    // tablets
-$breakpoint-lg: 1024 !default;   // desktops
-$breakpoint-xl: 1280 !default;   // large screens
+$breakpoint-xs:  0    !default; // mobile portrait
+$breakpoint-sm:  480  !default; // mobile landscape
+$breakpoint-md:  768  !default; // tablet
+$breakpoint-lg:  1024 !default; // desktop
+$breakpoint-xl:  1280 !default; // wide desktop
+
+// Convenience map
+$breakpoints: (
+        "xs": $breakpoint-xs,
+        "sm": $breakpoint-sm,
+        "md": $breakpoint-md,
+        "lg": $breakpoint-lg,
+        "xl": $breakpoint-xl
+) !default;

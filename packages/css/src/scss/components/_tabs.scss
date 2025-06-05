@@ -1,0 +1,58 @@
+@use "../foundations/functions" as fn;
+@use "../tokens/colors" as *;
+@use "../tokens/spacing" as *;
+@use "../tokens/typography" as *;
+@use "../tokens/border-radius" as br;
+
+// ============================================================================
+// Tabs Component – Atlassian Style
+// ============================================================================
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid $color-neutral-20;
+  margin-bottom: fn.rem-calc($spacing-3);
+
+  &__tab {
+    padding: fn.rem-calc($spacing-2) fn.rem-calc($spacing-4);
+    cursor: pointer;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-subtle;
+    margin-right: fn.rem-calc($spacing-4);
+    position: relative;
+    transition: color 0.15s ease-in-out;
+
+    &:hover {
+      color: $color-text-dark;
+    }
+
+    &--active {
+      color: $color-text;
+      font-weight: $font-weight-bold;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: $color-brand-primary;
+      }
+    }
+
+    &--disabled {
+      color: $color-neutral-60;
+      cursor: not-allowed;
+    }
+  }
+
+  &__panel {
+    display: none;
+  }
+
+  &__panel--active {
+    display: block;
+  }
+}

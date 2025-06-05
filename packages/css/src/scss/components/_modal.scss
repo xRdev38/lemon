@@ -1,0 +1,99 @@
+@use "../foundations/functions" as fn;
+@use "../tokens/colors" as *;
+@use "../tokens/spacing" as *;
+@use "../tokens/shadows" as *;
+@use "../tokens/opacity" as *;
+@use "../tokens/typography" as *;
+@use "../tokens/border-radius" as br;
+@use "../tokens/z-index" as *;
+
+// ============================================================================
+// Modal Component – Atlassian Style
+// ============================================================================
+
+.modal {
+  // Overlay backdrop
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-neutral-900, $opacity-50);
+    z-index: $z-index-overlay;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__window {
+    background-color: $color-surface;
+    border-radius: br.$radius-2;
+    box-shadow: $shadow-4;
+    max-width: fn.rem-calc(600);
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: $z-index-modal;
+    animation: fadein-scale 0.2s ease-in-out;
+  }
+
+  &__header {
+    padding: fn.rem-calc($spacing-3) fn.rem-calc($spacing-4);
+    border-bottom: 1px solid $color-neutral-20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      margin: 0;
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-text;
+    }
+
+    .modal__close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: fn.rem-calc($spacing-1);
+      color: $color-text-subtle;
+
+      &:hover {
+        color: $color-text;
+      }
+    }
+  }
+
+  &__body {
+    padding: fn.rem-calc($spacing-4);
+    overflow-y: auto;
+    flex: 1 1 auto;
+  }
+
+  &__footer {
+    padding: fn.rem-calc($spacing-3) fn.rem-calc($spacing-4);
+    border-top: 1px solid $color-neutral-20;
+    display: flex;
+    justify-content: flex-end;
+
+    .button {
+      margin-left: fn.rem-calc($spacing-2);
+    }
+  }
+
+  // Example animation
+  @keyframes fadein-scale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

@@ -1,21 +1,37 @@
+// ============================================================================
+// Main SCSS Entry Point – imports everything
+// ============================================================================
+
 // 1. Tokens
-@use "tokens/colors";
-@use "tokens/typography";
-@use "tokens/spacing";
-@use "tokens/shadows";
-@use "tokens/breakpoints";
+@use "tokens/colors" as *;
+@use "tokens/typography" as *;
+@use "tokens/spacing" as *;
+@use "tokens/shadows" as *;
+@use "tokens/border-radius" as *;
+@use "tokens/opacity" as *;
+@use "tokens/breakpoints" as *;
+@use "tokens/z-index" as *;
+@use "tokens/elevation" as *;
 
 // 2. Foundations
-@use "foundations/reset";
-@use "foundations/mixins";
-@use "foundations/functions";
+@use "foundations/reset" as *;
+@use "foundations/mixins" as *;
+@use "foundations/functions" as *;
 
-// 3. Utilitaires
-@use "utilities/visibility";
-@use "utilities/helpers";
-@use "utilities/grid";
+// 3. Utilities
+@use "utilities/visibility" as *;
+@use "utilities/helpers" as *;
+@use "utilities/grid" as *;
 
-// 4. Composants
-@use "components/button";
-@use "components/card";
-@use "components/input";
+// 4. Components
+@use "components/avatar" as *;
+@use "components/badge" as *;
+@use "components/button" as *;
+@use "components/card" as *;
+@use "components/checkbox" as *;
+@use "components/dropdown" as *;
+@use "components/input" as *;
+@use "components/modal" as *;
+@use "components/tabs" as *;
+@use "components/toast" as *;
+@use "components/tooltip" as *;

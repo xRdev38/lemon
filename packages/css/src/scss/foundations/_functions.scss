@@ -1,30 +1,64 @@
 @use "sass:math";
 @use "sass:map";
 @use "../tokens/breakpoints" as *;
+@use "../tokens/z-index" as *;
 
 // ============================================================================
-// rem-calc: Convert a unitless pixel value into rem (default base 16px)
+// rem-calc: Convert a unitless pixel value to rem (default base 16px)
 // ============================================================================
-// Example: rem-calc(12) => 0.75rem
-@function rem-calc($pixels, $base: 16) {
-  @return math.div($pixels, $base) * 1rem;
+// Example: rem-calc(16) => 1rem
+@function rem-calc($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
 }
 
 // ============================================================================
-// breakpoint-up: Return a media query string for a given breakpoint key
+// fluid-font: Create a fluid font-size between two breakpoints
+// ============================================================================
+// $min: minimum size (unitless px), $max: maximum size (unitless px)
+// $min-vw: viewport at which minimum applies (unitless px),
+// $max-vw: viewport at which maximum applies (unitless px)
+@function fluid-font($min, $max, $min-vw: 320, $max-vw: 1280) {
+  $slope: math.div($max - $min, $max-vw - $min-vw);
+  $intercept: $min - $slope * $min-vw;
+
+  @return clamp(
+          rem-calc($min),
+          math.calc($intercept + $slope * 100vw) * 1px,
+          rem-calc($max)
+  );
+}
+
+// ============================================================================
+// breakpoint-up: Return media query string for a given breakpoint key
 // ============================================================================
 // Example: breakpoint-up("md") => "(min-width: 768px)"
 @function breakpoint-up($key) {
-  $value: map.get(
-    (
-      "xs": $breakpoint-xs,
-      "sm": $breakpoint-sm,
-      "md": $breakpoint-md,
-      "lg": $breakpoint-lg,
-      "xl": $breakpoint-xl
-    ),
-    $key
-  );
+  $value: map.get($breakpoints, $key);
 
   @return "(min-width: #{$value}px)";
+}
+
+// ============================================================================
+// breakpoint-down: Return media query string for max-width minus 1px
+// ============================================================================
+// Example: breakpoint-down("sm") => "(max-width: 479px)"
+@function breakpoint-down($key) {
+  $value: map.get($breakpoints, $key);
+
+  @return "(max-width: #{math.div($value - 1, 1)}px)";
+}
+
+// ============================================================================
+// z-index: Return the z-index value from $z-index map
+// ============================================================================
+// Example: z-index("modal") => 300
+@function z-index($layer) {
+  @return map.get((
+          "background": $z-index-background,
+          "surface": $z-index-surface,
+          "overlay": $z-index-overlay,
+          "modal": $z-index-modal,
+          "global": $z-index-global,
+          "tooltip": $z-index-tooltip
+  ), $layer);
 }

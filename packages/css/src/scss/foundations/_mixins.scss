@@ -1,12 +1,33 @@
 // ============================================================================
-// Global Mixins for Lemon
+// Global Mixins (Atlassian–inspired)
 // ============================================================================
+
+// ------------------------------------
+// Flex Utilities
+// ------------------------------------
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-gap($gap) {
+  gap: $gap;
+}
+
+// ------------------------------------
+// Visually Hidden (for accessibility)
+// ------------------------------------
 @mixin visually-hidden {
   position: absolute !important;
   height: 1px;
@@ -14,4 +35,32 @@
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
+}
+
+// ------------------------------------
+// Text Truncation Ellipsis
+// ------------------------------------
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ------------------------------------
+// Transition Convenience
+// ------------------------------------
+// arguments: property, duration, timing-function
+@mixin transition($prop, $duration: 0.2s, $ease: ease-in-out) {
+  transition: $prop $duration $ease;
+}
+
+// ------------------------------------
+// Input Reset (remove browser default styling for form elements)
+// ------------------------------------
+@mixin input-reset {
+  border: none;
+  background: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
 }

@@ -1,14 +1,60 @@
-@use "../foundations/functions" as fn; // for rem-calc
+@use "../foundations/functions" as fn;
+@use "../foundations/mixins" as *;
 @use "../tokens/spacing" as *;
+@use "../tokens/colors" as *;
 
 // ============================================================================
-// Helper Utility Classes (text alignment, margin, padding…)
+// Helper Utility Classes (text align, margin, padding, etc.)
 // ============================================================================
+
+// Text alignment
+.u-text-left {
+  text-align: left !important;
+}
 
 .u-text-center {
   text-align: center !important;
 }
 
-.u-mb-sm {
-  margin-bottom: fn.rem-calc($spacing-sm) !important; // 12 -> 0.75rem
+.u-text-right {
+  text-align: right !important;
+}
+
+// Margin utilities (only examples for vertical/horizontal small/medium)
+.u-mb-1 {
+  margin-bottom: fn.rem-calc($spacing-1) !important;
+}
+
+.u-mb-2 {
+  margin-bottom: fn.rem-calc($spacing-2) !important;
+}
+
+.u-ml-1 {
+  margin-left: fn.rem-calc($spacing-1) !important;
+}
+
+.u-mr-1 {
+  margin-right: fn.rem-calc($spacing-1) !important;
+}
+
+.u-pt-2 {
+  padding-top: fn.rem-calc($spacing-2) !important;
+}
+
+.u-pr-2 {
+  padding-right: fn.rem-calc($spacing-2) !important;
+}
+
+// Text truncation
+.u-text-truncate {
+  @include text-truncate;
+}
+
+// Background utilities
+.u-bg-transparent {
+  background-color: transparent !important;
+}
+
+.u-bg-neutral {
+  background-color: $color-neutral-10 !important;
 }

@@ -2,45 +2,59 @@
 @use "../tokens/spacing" as *;
 
 // ============================================================================
-// Simple Grid System for Lemon (inspired by Atlassian Grid)
+// Simple Grid System – Atlassian Guidelines
+// Can be extended to 12-column grid if needed
 // ============================================================================
 
 .container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: fn.rem-calc($spacing-md);
-  padding-right: fn.rem-calc($spacing-md);
+  padding-left: fn.rem-calc($spacing-3);
+  padding-right: fn.rem-calc($spacing-3);
 
   @media #{fn.breakpoint-up("md")} {
-    max-width: fn.rem-calc(720); // 720 → 45rem
+    max-width: fn.rem-calc(720); // 720px → 45rem
   }
 
   @media #{fn.breakpoint-up("lg")} {
-    max-width: fn.rem-calc(960); // 960 → 60rem
+    max-width: fn.rem-calc(960); // 960px → 60rem
   }
 
   @media #{fn.breakpoint-up("xl")} {
-    max-width: fn.rem-calc(1140); // 1140 → 71.25rem
+    max-width: fn.rem-calc(1140); // 1140px → 71.25rem
   }
+}
+
+.col {
+  flex: 1 0 0%;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
+  margin-left: -(fn.rem-calc($spacing-2));
+  margin-right: -(fn.rem-calc($spacing-2));
 
-  // Wrap fn.rem-calc(...) in parentheses before negating
-  margin-left: -(fn.rem-calc($spacing-sm));
-  margin-right: -(fn.rem-calc($spacing-sm));
+  // Reset for children
+  > .col {
+    padding-left: fn.rem-calc($spacing-2);
+    padding-right: fn.rem-calc($spacing-2);
+  }
 }
 
-.col {
-  flex: 1 0 0%;
-  padding-left: fn.rem-calc($spacing-sm);
-  padding-right: fn.rem-calc($spacing-sm);
-}
-
+// Example fixed-width column classes
 .col-6 {
   flex: 0 0 50%;
   max-width: 50%;
+}
+
+.col-4 {
+  flex: 0 0 33.3333%;
+  max-width: 33.3333%;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
 }

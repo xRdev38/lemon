@@ -1,29 +1,66 @@
-// ============================================================================
-// Input (Form Field) Component Styles for Lemon
-// ============================================================================
 @use "../foundations/functions" as fn;
 @use "../tokens/colors" as *;
 @use "../tokens/spacing" as *;
 @use "../tokens/typography" as *;
+@use "../tokens/border-radius" as br;
+
+// ============================================================================
+// Input, Textarea, Select – Atlassian Style
+// ============================================================================
+
+%input {
+  font-family: $font-family-sans;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  padding: fn.rem-calc($spacing-2) fn.rem-calc($spacing-3);
+  border: 1px solid $color-neutral-50;
+  border-radius: br.$radius-2;
+  background-color: $color-neutral-0;
+  color: $color-text;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  width: 100%;
+}
 
 .input {
-  display: block;
-  width: 100%;
-  padding: fn.rem-calc($spacing-sm);
-  font-size: $font-size-sm;
-  border: 1px solid $color-neutral-400;
-  border-radius: fn.rem-calc(3);
-  background-color: #fff;
-  color: $color-text-primary;
-  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  @extend %input;
 
   &:focus {
     outline: none;
     border-color: $color-brand-primary;
-    box-shadow: 0 0 0 3px rgba($color-brand-primary, 0.2);
+    box-shadow: 0 0 0 3px rgba($color-brand-primary, 0.3);
   }
 
   &--error {
     border-color: $color-danger;
+
+    &:focus {
+      border-color: $color-danger;
+      box-shadow: 0 0 0 3px rgba($color-danger, 0.3);
+    }
   }
+
+  &--disabled {
+    background-color: $color-neutral-10;
+    border-color: $color-neutral-20;
+    color: $color-neutral-60;
+    cursor: not-allowed;
+  }
+}
+
+.textarea {
+  @extend %input;
+
+  resize: vertical;
+  min-height: fn.rem-calc(80);
+}
+
+.select {
+  @extend %input;
+
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8L0 0h12L6 8z' fill='%23918C8F'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right fn.rem-calc($spacing-2) center;
+  background-size: fn.rem-calc(8) fn.rem-calc(8);
+  padding-right: fn.rem-calc($spacing-5);
 }

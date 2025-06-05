@@ -1,0 +1,24 @@
+@use "../tokens/z-index" as *;
+@use "../tokens/shadows" as *;
+
+// ============================================================================
+// Elevation Tokens – Atlassian Design System
+// Combines shadows + z-index for different layers
+// ============================================================================
+
+$elevation-surface: (
+        "z-index": $z-index-surface,
+        "shadow": $shadow-1
+) !default;
+$elevation-overlay: (
+        "z-index": $z-index-overlay,
+        "shadow": $shadow-2
+) !default;
+$elevation-modal: (
+        "z-index": $z-index-modal,
+        "shadow": $shadow-3
+) !default;
+$elevation-tooltip: (
+        "z-index": $z-index-tooltip,
+        "shadow": $shadow-4
+) !default;

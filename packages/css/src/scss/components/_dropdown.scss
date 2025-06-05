@@ -1,0 +1,79 @@
+@use "../foundations/functions" as fn;
+@use "../tokens/colors" as *;
+@use "../tokens/spacing" as *;
+@use "../tokens/shadows" as *;
+@use "../tokens/typography" as *;
+@use "../tokens/z-index" as *;
+@use "../tokens/border-radius" as br;
+
+// ============================================================================
+// Dropdown Component – Atlassian Style
+// (basic single‐select style; extend as needed)
+// ============================================================================
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  font-family: $font-family-sans;
+
+  &__control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid $color-neutral-50;
+    border-radius: br.$radius-2;
+    background-color: $color-neutral-0;
+    padding: fn.rem-calc($spacing-2) fn.rem-calc($spacing-3);
+    cursor: pointer;
+    min-width: fn.rem-calc(120);
+    transition: border-color 0.15s ease-in-out;
+
+    &:hover {
+      border-color: $color-neutral-60;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $color-brand-primary;
+      box-shadow: 0 0 0 3px rgba($color-brand-primary, 0.3);
+    }
+
+    &--disabled {
+      background-color: $color-neutral-10;
+      border-color: $color-neutral-20;
+      color: $color-neutral-60;
+      cursor: not-allowed;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: fn.rem-calc($spacing-1);
+    background-color: $color-neutral-0;
+    border: 1px solid $color-neutral-50;
+    border-radius: br.$radius-2;
+    box-shadow: $shadow-2;
+    z-index: $z-index-overlay;
+    min-width: 100%;
+  }
+
+  &__item {
+    padding: fn.rem-calc($spacing-2) fn.rem-calc($spacing-3);
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    color: $color-text;
+    cursor: pointer;
+    transition: background-color 0.1s ease-in-out;
+
+    &:hover {
+      background-color: $color-neutral-10;
+    }
+
+    &--disabled {
+      color: $color-neutral-60;
+      cursor: not-allowed;
+    }
+  }
+}

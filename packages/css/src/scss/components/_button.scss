@@ -1,26 +1,33 @@
-// ============================================================================
-// Button Component Styles for Lemon
-// ============================================================================
 @use "../foundations/functions" as fn;
 @use "../tokens/colors" as *;
 @use "../tokens/spacing" as *;
 @use "../tokens/typography" as *;
+@use "../tokens/shadows" as *;
+@use "../tokens/border-radius" as br;
+
+// ============================================================================
+// Button Component – Atlassian Style
+// ============================================================================
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: fn.rem-calc($spacing-sm) fn.rem-calc($spacing-md);
-  font-size: $font-size-sm;
+  font-family: $font-family-sans;
   font-weight: $font-weight-medium;
   border: none;
-  border-radius: fn.rem-calc(3);
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: br.$radius-2;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  padding: fn.rem-calc($spacing-2) fn.rem-calc($spacing-3);
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
 
   &--primary {
     background-color: $color-brand-primary;
-    color: #fff;
+    color: $color-neutral-0;
 
     &:hover {
       background-color: $color-brand-primary-hover;
@@ -28,26 +35,68 @@
 
     &:active {
       background-color: $color-brand-primary-active;
+      box-shadow: $shadow-1;
     }
 
     &:disabled {
-      background-color: $color-neutral-300;
+      background-color: $color-neutral-40;
+      color: $color-neutral-70;
       cursor: not-allowed;
     }
   }
 
   &--secondary {
-    background-color: transparent;
-    border: 1px solid $color-neutral-400;
-    color: $color-text-primary;
+    background-color: $color-neutral-20;
+    color: $color-text;
 
     &:hover {
-      background-color: $color-neutral-200;
+      background-color: $color-neutral-30;
+    }
+
+    &:active {
+      background-color: $color-neutral-40;
+      box-shadow: $shadow-1;
     }
 
     &:disabled {
-      border-color: $color-neutral-200;
-      color: $color-neutral-400;
+      background-color: $color-neutral-10;
+      color: $color-neutral-60;
+      cursor: not-allowed;
+    }
+  }
+
+  &--danger {
+    background-color: $color-danger;
+    color: $color-neutral-0;
+
+    &:hover {
+      background-color: $color-danger-hover;
+    }
+
+    &:active {
+      background-color: $color-danger-active;
+      box-shadow: $shadow-1;
+    }
+
+    &:disabled {
+      background-color: $color-neutral-40;
+      color: $color-neutral-70;
+      cursor: not-allowed;
+    }
+  }
+
+  &--link {
+    background: none;
+    color: $color-brand-primary;
+    padding: 0;
+    font-weight: $font-weight-medium;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:disabled {
+      color: $color-neutral-60;
       cursor: not-allowed;
     }
   }

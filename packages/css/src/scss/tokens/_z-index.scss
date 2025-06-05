@@ -1,0 +1,11 @@
+// ============================================================================
+// Z-Index Layers – Atlassian Design System
+// https://atlassian.design/guidelines/product/foundations/layers
+// ============================================================================
+
+$z-index-background:     0    !default;
+$z-index-surface:        100  !default;
+$z-index-overlay:        200  !default; // dropdowns, popovers
+$z-index-modal:          300  !default;
+$z-index-global:         400  !default; // global notifications, toasts
+$z-index-tooltip:        500  !default;

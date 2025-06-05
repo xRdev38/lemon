@@ -1,0 +1,59 @@
+@use "../foundations/functions" as fn;
+@use "../tokens/border-radius" as br;
+@use "../tokens/spacing" as *;
+@use "../tokens/colors" as *;
+@use "../tokens/typography" as *;
+
+// ============================================================================
+// Avatar Component
+// ============================================================================
+
+.avatar {
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: br.$radius-round;
+  overflow: hidden;
+  background-color: $color-neutral-20;
+  color: $color-neutral-70;
+  text-align: center;
+
+  &--size-xs {
+    width: fn.rem-calc(24);
+    height: fn.rem-calc(24);
+    font-size: fn.rem-calc(10);
+  }
+
+  &--size-sm {
+    width: fn.rem-calc(32);
+    height: fn.rem-calc(32);
+    font-size: fn.rem-calc(12);
+  }
+
+  &--size-md {
+    width: fn.rem-calc(40);
+    height: fn.rem-calc(40);
+    font-size: fn.rem-calc(14);
+  }
+
+  &--size-lg {
+    width: fn.rem-calc(48);
+    height: fn.rem-calc(48);
+    font-size: fn.rem-calc(16);
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .avatar__initials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-weight: $font-weight-medium;
+  }
+}

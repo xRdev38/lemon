@@ -1,0 +1,41 @@
+@use "../foundations/functions" as fn;
+@use "../tokens/colors" as *;
+@use "../tokens/spacing" as *;
+@use "../tokens/typography" as *;
+@use "../tokens/border-radius" as br;
+
+// ============================================================================
+// Badge Component
+// ============================================================================
+
+.badge {
+  display: inline-block;
+  font-size: $font-size-xxs;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-xs;
+  text-transform: uppercase;
+  padding: fn.rem-calc($spacing-1) fn.rem-calc($spacing-2);
+  border-radius: br.$radius-2;
+  background-color: $color-neutral-80;
+  color: $color-neutral-0;
+
+  &--low {
+    background-color: $color-success;
+    color: $color-neutral-0;
+  }
+
+  &--medium {
+    background-color: $color-warning;
+    color: $color-neutral-0;
+  }
+
+  &--high {
+    background-color: $color-danger;
+    color: $color-neutral-0;
+  }
+
+  &--info {
+    background-color: $color-info;
+    color: $color-neutral-0;
+  }
+}

@@ -1,0 +1,75 @@
+@use "../foundations/functions" as fn;
+@use "../tokens/colors" as *;
+@use "../tokens/spacing" as *;
+@use "../tokens/typography" as *;
+@use "../tokens/border-radius" as br;
+
+// ============================================================================
+// Checkbox Component – Atlassian Style
+// ============================================================================
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    width: fn.rem-calc($spacing-3);
+    height: fn.rem-calc($spacing-3);
+    border: 2px solid $color-neutral-50;
+    border-radius: br.$radius-1;
+    background-color: $color-neutral-0;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.15s, border-color 0.15s;
+
+    &:checked {
+      background-color: $color-success;
+      border-color: $color-success;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        width: fn.rem-calc(4);
+        height: fn.rem-calc(8);
+        border: solid $color-neutral-0;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+
+    &:hover {
+      border-color: $color-neutral-60;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($color-brand-primary, 0.3);
+    }
+
+    &:disabled {
+      background-color: $color-neutral-10;
+      border-color: $color-neutral-20;
+      cursor: not-allowed;
+    }
+  }
+
+  label {
+    margin-left: fn.rem-calc($spacing-2);
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    color: $color-text;
+    cursor: pointer;
+
+    input[type="checkbox"]:disabled + & {
+      color: $color-neutral-60;
+      cursor: not-allowed;
+    }
+  }
+}

@@ -1,30 +1,73 @@
 // ============================================================================
-// Color Palette for Lemon (inspired by Atlassian Design)
+// Color Palette – based on Atlassian Design System
+// https://atlassian.design/guidelines/product/foundations/colors
 // ============================================================================
 
-// Brand colors
-$color-brand-primary: #0052CC !default;       // primary blue
-$color-brand-primary-hover: #0065FF !default;
-$color-brand-primary-active: #0747A6 !default;
+// ------------------------------------
+// Brand
+// ------------------------------------
+$color-brand-primary:    #0052CC !default; // Atlassian Blue
+$color-brand-primary-hover: #0747A6 !default;
+$color-brand-primary-active: #172B4D !default;
+$color-brand-secondary:  #F5F6F7 !default; // Light grayish blue
+$color-brand-accent:     #1D7AFC !default;
 
-// Neutral (grayscale)
-$color-neutral-100: #FAFBFC !default;         // lightest background
-$color-neutral-200: #F4F5F7 !default;
-$color-neutral-300: #EBECF0 !default;
-$color-neutral-400: #DFE1E6 !default;
-$color-neutral-500: #C1C7D0 !default;
-$color-neutral-600: #B3BAC5 !default;
-$color-neutral-700: #A5ADBA !default;
-$color-neutral-800: #97A0AF !default;
-$color-neutral-900: #8993A4 !default;         // darkest
+// ------------------------------------
+// Neutrals (gray-scale, N0 → N900)
+// ------------------------------------
+$color-neutral-0:    #FFF !default; // pure white
+$color-neutral-10:   #FDFEFE !default;
+$color-neutral-20:   #F7F8F8 !default;
+$color-neutral-30:   #EBECED !default;
+$color-neutral-40:   #DFE1E6 !default;
+$color-neutral-50:   #C1C7D0 !default;
+$color-neutral-60:   #B3BAC5 !default;
+$color-neutral-70:   #A5ADBA !default;
+$color-neutral-80:   #97A0AF !default;
+$color-neutral-90:   #8993A4 !default;
+$color-neutral-100:  #7A869A !default;
+$color-neutral-200:  #6B778C !default;
+$color-neutral-300:  #5E6C84 !default;
+$color-neutral-400:  #505F79 !default;
+$color-neutral-500:  #42526E !default;
+$color-neutral-600:  #344563 !default;
+$color-neutral-700:  #253858 !default;
+$color-neutral-800:  #172B4D !default;
+$color-neutral-900:  #091E42 !default; // almost black
 
-// Accent colors
-$color-success: #36B37E !default;             // green for success states
-$color-warning: #FFAB00 !default;             // yellow for warnings
-$color-danger: #DE350B !default;              // red for errors
-$color-info: #00B8D9 !default;                // light blue for info
+// ------------------------------------
+// Semantic / Accent
+// ------------------------------------
+$color-success:    #36B37E !default;
+$color-success-hover: #1F845A !default;
+$color-success-active: #064 !default;
+$color-warning:    #FFAB00 !default;
+$color-warning-hover: #FF991F !default;
+$color-warning-active: #FF8B00 !default;
+$color-danger:     #DE350B !default;
+$color-danger-hover: #BF2600 !default;
+$color-danger-active: #A61B00 !default;
+$color-info:       #00B8D9 !default;
+$color-info-hover: #00A3BF !default;
+$color-info-active: #008DA6 !default;
 
+// ------------------------------------
 // Text
-$color-text-primary: $color-neutral-900 !default;
-$color-text-secondary: $color-neutral-700 !default;
-$color-text-disabled: $color-neutral-400 !default;
+// ------------------------------------
+$color-text:                 $color-neutral-900 !default;
+$color-text-dark:            $color-neutral-800 !default;
+$color-text-subtle:          $color-neutral-70 !default;
+$color-text-disabled:        $color-neutral-40 !default;
+
+// ------------------------------------
+// Backgrounds
+// ------------------------------------
+$color-background:           $color-neutral-10 !default;
+$color-surface:              $color-neutral-0  !default;
+$color-surface-elevated:     $color-neutral-20 !default;
+
+// ------------------------------------
+// Borders
+// ------------------------------------
+$color-border:               $color-neutral-40 !default;
+$color-border-focused:       $color-neutral-60 !default;
