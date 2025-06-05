@@ -1,7 +1,7 @@
 const { execSync } = require("child_process");
 const path = require("path");
 
-describe("Package @lemon/css", () => {
+describe("Package @xrdev_38/css", () => {
     test("should compile SCSS without errors", () => {
         const cwd = path.resolve(__dirname, "..");
         expect(() => {

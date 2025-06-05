@@ -1,6 +1,6 @@
 const icons = require("../index");
 
-describe("Package @lemon/icons", () => {
+describe("Package @xrdev_38/icons", () => {
     test("should be export empty object", () => {
         expect(typeof icons).toBe("object");
         expect(Object.keys(icons).length).toBeGreaterThan(0);

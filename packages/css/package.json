@@ -1,5 +1,5 @@
 {
-  "name": "@xrdev_38/css",
+  "name": "@xrdev_38/lemon-css",
   "version": "0.0.1",
   "description": "SCSS-based design system for Lemon (inspired by Atlassian)",
   "main": "dist/lemon.css",

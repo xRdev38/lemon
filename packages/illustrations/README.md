@@ -1,17 +1,17 @@
-# @lemon/illustrations
+# @xrdev_38/lemon-illustrations
 
 Illustrations for the Lemon design system.
 
 ## Installation
 
 ```bash
-pnpm add @lemon/illustrations
+pnpm add @xrdev_38/lemon-illustrations
 ```
 
 ## Usage
 
 ```js
-import illustrations from "@lemon/illustrations";
+import illustrations from "@xrdev_38/lemon-illustrations";
 
 // Each key is a camelCased illustration name, and each value is either:
 // • A string containing raw SVG markup (for `.svg` files), or
@@ -30,7 +30,7 @@ From within the `packages/illustrations` directory, you can run:
   ```bash
   npm run build
   # or, at the monorepo root:
-  pnpm run build --scope=@lemon/illustrations
+  pnpm run build --scope=@xrdev_38/lemon-illustrations
   ```
 
 - **`npm run test`**  
@@ -38,7 +38,7 @@ From within the `packages/illustrations` directory, you can run:
   ```bash
   npm run test
   # or, at the monorepo root:
-  pnpm run test --scope=@lemon/illustrations
+  pnpm run test --scope=@xrdev_38/lemon-illustrations
   ```
 
 ## File Structure
@@ -70,8 +70,8 @@ packages/illustrations/
 3. Add your illustration file(s) to `src/illustrations/`.
 4. Run build and tests:
    ```bash
-   pnpm run build --scope=@lemon/illustrations
-   pnpm run test --scope=@lemon/illustrations
+   pnpm run build --scope=@xrdev_38/lemon-illustrations
+   pnpm run test --scope=@xrdev_38/lemon-illustrations
    ```
 5. Commit and open a pull request.
 

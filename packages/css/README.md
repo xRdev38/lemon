@@ -1,4 +1,4 @@
-# @lemon/css
+# @xrdev_38/lemon-css
 
 Comprehensive SCSS-based design system for Lemon (inspired by Atlassian Design System).
 
@@ -14,7 +14,7 @@ This package includes:
 You can install this package via npm, Yarn, or pnpm:
 
 ```bash
-pnpm add @lemon/css
+pnpm add @xrdev_38/lemon-css
 ```
 
 ## Usage
@@ -24,13 +24,13 @@ pnpm add @lemon/css
 In your main CSS/SCSS entry file or HTML:
 
 ```scss
-@import "@lemon/css/dist/lemon.css";
+@import "@xrdev_38/lemon-css/dist/lemon.css";
 ```
 
 _or in HTML:_
 
 ```html
-<link rel="stylesheet" href="node_modules/@lemon/css/dist/lemon.css" />
+<link rel="stylesheet" href="node_modules/@xrdev_38/lemon-css/dist/lemon.css" />
 ```
 
 ### 2. Use the SCSS sources directly
@@ -38,7 +38,7 @@ _or in HTML:_
 To customize or extend variables/mixins/components:
 
 ```scss
-@use "@lemon/css/src/scss/index" as *;
+@use "@xrdev_38/lemon-css/src/scss/index" as *;
 ```
 
 This imports all tokens, foundations, utilities, and components from the SCSS source.
@@ -52,7 +52,7 @@ From within the `packages/css` directory, you can run:
   ```bash
   npm run build
   # or, at the monorepo root:
-  pnpm run build --scope=@lemon/css
+  pnpm run build --scope=@xrdev_38/lemon-css
   ```
 
 - **`npm run lint`**  
@@ -60,7 +60,7 @@ From within the `packages/css` directory, you can run:
   ```bash
   npm run lint
   # or, at the monorepo root:
-  pnpm run lint --scope=@lemon/css
+  pnpm run lint --scope=@xrdev_38/lemon-css
   ```
 
 - **`npm run test`**  
@@ -68,7 +68,7 @@ From within the `packages/css` directory, you can run:
   ```bash
   npm run test
   # or, at the monorepo root:
-  pnpm run test --scope=@lemon/css
+  pnpm run test --scope=@xrdev_38/lemon-css
   ```
 
 ## File Structure

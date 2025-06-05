@@ -1,17 +1,17 @@
-# @lemon/icons
+# @xrdev_38/lemon-icons
 
 SVG icon collection for the Lemon design system.
 
 ## Installation
 
 ```bash
-pnpm add @lemon/icons
+pnpm add @xrdev_38/lemon-icons
 ```
 
 ## Usage
 
 ```js
-import icons from "@lemon/icons";
+import icons from "@xrdev_38/lemon-icons";
 
 // Each key is a camelCased icon name, and each value is the raw SVG string.
 const svgArrowLeft = icons.arrowLeft;
@@ -29,7 +29,7 @@ From within the `packages/icons` directory, you can run:
   ```bash
   npm run build
   # or, at the monorepo root:
-  pnpm run build --scope=@lemon/icons
+  pnpm run build --scope=@xrdev_38/lemon-icons
   ```
 
 - **`npm run test`**  
@@ -37,7 +37,7 @@ From within the `packages/icons` directory, you can run:
   ```bash
   npm run test
   # or, at the monorepo root:
-  pnpm run test --scope=@lemon/icons
+  pnpm run test --scope=@xrdev_38/lemon-icons
   ```
 
 ## File Structure
@@ -70,8 +70,8 @@ packages/icons/
 3. Add your SVG file(s) to `src/icons/`.
 4. Run build and tests:
    ```bash
-   pnpm run build --scope=@lemon/icons
-   pnpm run test --scope=@lemon/icons
+   pnpm run build --scope=@xrdev_38/lemon-icons
+   pnpm run test --scope=@xrdev_38/lemon-icons
    ```
 5. Commit and open a pull request.
 
