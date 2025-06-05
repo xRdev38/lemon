@@ -1,6 +1,6 @@
 {
-  "name": "@lemon/css",
-  "version": "0.1.0",
+  "name": "@xrdev_38/css",
+  "version": "0.0.1",
   "description": "SCSS-based design system for Lemon (inspired by Atlassian)",
   "main": "dist/lemon.css",
   "files": [
@@ -8,8 +8,9 @@
     "src/scss/"
   ],
   "scripts": {
-    "build": "sass src/scss/index.scss dist/lemon.css --no-source-map",
+    "build": "sass src/scss/index.scss dist/lemon.css --no-source-map && pnpm run build:copy",
     "lint": "stylelint \"src/scss/**/*.scss\" --fix",
+    "build:copy": "cpx \"./dist/lemon.css\" \"../../demo/src/css/\"",
     "test": "jest"
   },
   "keywords": [
@@ -24,6 +25,7 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "sass": "^1.71.1",
+    "cpx2": "^6.0.1",
     "stylelint": "^16.20.0",
     "stylelint-config-standard": "^29.0.0",
     "stylelint-config-standard-scss": "^15.0.1",

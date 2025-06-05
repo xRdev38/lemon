@@ -7,13 +7,15 @@
   "devDependencies": {
     "devmoji": "^2.3.0",
     "husky": "^9.0.11",
-    "lerna": "^8.1.3"
+    "lerna": "^8.1.3",
+    "lite-server": "^2.6.1"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "test": "lerna run test",
     "lint": "lerna run lint",
+    "serve-styleguide": "lite-server -c demo/ls-config.json",
     "prepare": "husky install",
     "postinstall": "pnpm run prepare"
   }

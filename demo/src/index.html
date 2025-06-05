@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lemon.css Styleguide</title>
+    <!-- Link to compiled Lemon CSS -->
+    <link rel="stylesheet" href="./css/lemon.css" />
+    <style>
+        body {
+            padding: 2rem;
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+        }
+        section {
+            margin-bottom: 3rem;
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin-bottom: 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .color-swatch {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 0.5rem;
+            border: 1px solid #ccc;
+            position: relative;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 100px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #eef0f2;
+            padding: 1rem;
+            overflow-x: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Lemon.css Styleguide</h1>
+
+    <!-- Section: Typography -->
+    <section id="typography">
+        <h2>Typography</h2>
+        <p>Examples of headings and paragraphs:</p>
+        <h1>Heading H1</h1>
+        <h2>Heading H2</h2>
+        <h3>Heading H3</h3>
+        <h4>Heading H4</h4>
+        <h5>Heading H5</h5>
+        <h6>Heading H6</h6>
+        <p>Standard paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+        <p><strong>Bold text</strong>, <em>italic text</em>, <a href="#">link</a>.</p>
+        <ul>
+            <li>Bullet list item 1</li>
+            <li>Bullet list item 2</li>
+            <li>Bullet list item 3</li>
+        </ul>
+        <ol>
+            <li>Ordered list item 1</li>
+            <li>Ordered list item 2</li>
+            <li>Ordered list item 3</li>
+        </ol>
+    </section>
+
+    <!-- Section: Color Palette -->
+    <section id="colors">
+        <h2>Color Palette</h2>
+        <div>
+            <div class="color-swatch" style="background-color: #0052CC;">Brand Primary</div>
+            <div class="color-swatch" style="background-color: #0747A6;">Primary Hover</div>
+            <div class="color-swatch" style="background-color: #36B37E;">Success</div>
+            <div class="color-swatch" style="background-color: #FFAB00;">Warning</div>
+            <div class="color-swatch" style="background-color: #DE350B;">Danger</div>
+            <div class="color-swatch" style="background-color: #00B8D9;">Info</div>
+        </div>
+        <div>
+            <div class="color-swatch" style="background-color: #FDFEFE; color: #000;">N10</div>
+            <div class="color-swatch" style="background-color: #C1C7D0; color: #000;">N50</div>
+            <div class="color-swatch" style="background-color: #091E42;">N900</div>
+        </div>
+    </section>
+
+    <!-- Section: Buttons -->
+    <section id="buttons">
+        <h2>Buttons</h2>
+        <button class="button button--primary">Primary Button</button>
+        <button class="button button--secondary">Secondary Button</button>
+        <button class="button button--danger">Danger Button</button>
+        <button class="button button--link">Link Button</button>
+        <button class="button button--primary" disabled>Primary Disabled</button>
+        <button class="button button--secondary" disabled>Secondary Disabled</button>
+        <button class="button button--danger" disabled>Danger Disabled</button>
+    </section>
+
+    <!-- Section: Badges -->
+    <section id="badge">
+        <h2>Badges</h2>
+        <span class="badge">Default</span>
+        <span class="badge badge--low">Low</span>
+        <span class="badge badge--medium">Medium</span>
+        <span class="badge badge--high">High</span>
+        <span class="badge badge--info">Info</span>
+    </section>
+
+    <!-- Section: Cards -->
+    <section id="cards">
+        <h2>Cards</h2>
+        <div class="card">
+            <div class="card__header">Card Header</div>
+            <div class="card__body">This is a card body with some text. Lorem ipsum dolor sit amet.</div>
+            <div class="card__footer">
+                <button class="button button--primary">Action</button>
+                <button class="button button--secondary">Cancel</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Forms -->
+    <section id="forms">
+        <h2>Forms</h2>
+        <div>
+            <label for="input-text">Text Input:</label><br>
+            <input id="input-text" class="input" placeholder="Enter text" /><br><br>
+
+            <label for="input-error">Text Input (Error):</label><br>
+            <input id="input-error" class="input input--error" placeholder="Error state" /><br><br>
+
+            <label for="checkbox-demo"><input id="checkbox-demo" type="checkbox" class="checkbox__control" /> Checkbox Label</label><br><br>
+
+            <label for="dropdown-demo">Dropdown:</label><br>
+            <div class="dropdown">
+                <div class="dropdown__control">Select an option</div>
+                <div class="dropdown__menu">
+                    <div class="dropdown__item">Option 1</div>
+                    <div class="dropdown__item">Option 2</div>
+                    <div class="dropdown__item">Option 3</div>
+                </div>
+            </div><br><br>
+
+            <label for="textarea-demo">Textarea:</label><br>
+            <textarea id="textarea-demo" class="textarea" rows="3" placeholder="Type here..."></textarea>
+        </div>
+    </section>
+
+    <!-- Section: Modals -->
+    <section id="modals">
+        <h2>Modals</h2>
+        <button id="open-modal" class="button button--primary">Open Modal</button>
+        <!-- Modal structure, hidden by default -->
+        <div id="modal-wrapper" class="modal__backdrop" style="display:none;">
+            <div class="modal__window">
+                <div class="modal__header">
+                    <h2>Modal Title</h2>
+                    <button id="close-modal" class="modal__close">&times;</button>
+                </div>
+                <div class="modal__body">
+                    <p>Modal content. Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="modal__footer">
+                    <button class="button button--secondary">Close</button>
+                    <button class="button button--primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section: Tabs -->
+    <section id="tabs">
+        <h2>Tabs</h2>
+        <div class="tabs">
+            <div class="tabs__tab tabs__tab--active" data-target="tab1">Tab 1</div>
+            <div class="tabs__tab" data-target="tab2">Tab 2</div>
+            <div class="tabs__tab" data-target="tab3">Tab 3</div>
+        </div>
+        <div id="tab1" class="tabs__panel tabs__panel--active">
+            <p>Content of Tab 1.</p>
+        </div>
+        <div id="tab2" class="tabs__panel">
+            <p>Content of Tab 2.</p>
+        </div>
+        <div id="tab3" class="tabs__panel">
+            <p>Content of Tab 3.</p>
+        </div>
+    </section>
+
+    <!-- Section: Toasts -->
+    <section id="toast">
+        <h2>Toast Notification</h2>
+        <button id="show-toast" class="button button--primary">Show Toast</button>
+        <div class="toast-container" id="toast-container"></div>
+    </section>
+
+    <!-- Section: Tooltips -->
+    <section id="tooltip">
+        <h2>Tooltip</h2>
+        <div class="tooltip">
+            <span class="tooltip__trigger">Hover over me</span>
+            <div class="tooltip__content">Tooltip content</div>
+        </div>
+    </section>
+</div>
+
+<!-- Basic interaction scripts -->
+<script>
+    // Modal logic
+    const openModalBtn = document.getElementById('open-modal');
+    const closeModalBtn = document.getElementById('close-modal');
+    const modalWrapper = document.getElementById('modal-wrapper');
+
+    openModalBtn.addEventListener('click', () => {
+        modalWrapper.style.display = 'flex';
+    });
+    closeModalBtn.addEventListener('click', () => {
+        modalWrapper.style.display = 'none';
+    });
+
+    // Tabs logic
+    const tabs = document.querySelectorAll('.tabs__tab');
+    const panels = document.querySelectorAll('.tabs__panel');
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('tabs__tab--active'));
+            panels.forEach(p => p.classList.remove('tabs__panel--active'));
+            tab.classList.add('tabs__tab--active');
+            const target = tab.getAttribute('data-target');
+            document.getElementById(target).classList.add('tabs__panel--active');
+        });
+    });
+
+    // Toast logic
+    const showToastBtn = document.getElementById('show-toast');
+    const toastContainer = document.getElementById('toast-container');
+    showToastBtn.addEventListener('click', () => {
+        const toast = document.createElement('div');
+        toast.className = 'toast toast--success';
+        toast.innerHTML = '<span class="toast__message">Operation successful!</span><button class="toast__close">&times;</button>';
+        toastContainer.appendChild(toast);
+        toast.querySelector('.toast__close').addEventListener('click', () => {
+            toast.remove();
+        });
+        setTimeout(() => {
+            toast.remove();
+        }, 3000);
+    });
+
+    // Tooltip logic
+    const tooltipTrigger = document.querySelector('.tooltip__trigger');
+    tooltipTrigger.addEventListener('mouseenter', () => {
+        tooltipTrigger.parentElement.classList.add('tooltip--visible');
+    });
+    tooltipTrigger.addEventListener('mouseleave', () => {
+        tooltipTrigger.parentElement.classList.remove('tooltip--visible');
+    });
+</script>
+</body>
+</html>

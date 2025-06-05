@@ -45,14 +45,16 @@
   padding-right: fn.rem-calc($spacing-2) !important;
 }
 
-// Text truncation
 .u-text-truncate {
   @include text-truncate;
 }
 
-// Background utilities
 .u-bg-transparent {
   background-color: transparent !important;
+}
+
+.u-bg-none {
+  background: none !important;
 }
 
 .u-bg-neutral {
