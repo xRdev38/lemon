@@ -1,0 +1,25 @@
+{
+  "name": "@lemon/illustrations",
+  "version": "0.0.1",
+  "description": "Illustrations",
+  "main": "index.js",
+  "files": [
+    "dist/",
+    "src/illustrations/"
+  ],
+  "scripts": {
+    "build": "cpx \"src/illustrations/**/*\" dist/illustrations && cpx \"index.js\" dist/ && cpx \"package.json\" dist/",
+    "test": "jest"
+  },
+  "keywords": [
+    "lemon",
+    "design-system",
+    "illustrations"
+  ],
+  "author": "@xrdev_38",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "cpx2": "^6.0.1"
+  }
+}

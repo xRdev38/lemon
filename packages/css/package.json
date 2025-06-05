@@ -1,0 +1,32 @@
+{
+  "name": "@lemon/css",
+  "version": "0.1.0",
+  "description": "SCSS-based design system for Lemon (inspired by Atlassian)",
+  "main": "dist/lemon.css",
+  "files": [
+    "dist/",
+    "src/scss/"
+  ],
+  "scripts": {
+    "build": "sass src/scss/index.scss dist/lemon.css --no-source-map",
+    "lint": "stylelint \"src/scss/**/*.scss\"",
+    "test": "jest"
+  },
+  "keywords": [
+    "lemon",
+    "design-system",
+    "css",
+    "scss",
+    "atlassian"
+  ],
+  "author": "@xrdev_38",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "sass": "^1.71.1",
+    "stylelint": "^16.20.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint-scss": "^6.12.0"
+  }
+}

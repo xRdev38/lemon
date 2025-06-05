@@ -1,0 +1,27 @@
+{
+  "name": "@lemon/icons",
+  "version": "0.0.1",
+  "description": "Icons of Lemon's design-system",
+  "main": "index.js",
+  "files": [
+    "dist/",
+    "src/icons/"
+  ],
+  "scripts": {
+    "build": "cpx \"src/icons/**/*\" dist/icons && cpx \"index.js\" dist/ && cpx \"package.json\" dist/",
+    "test": "jest"
+  },
+  "keywords": [
+    "lemon",
+    "design-system",
+    "icons",
+    "svg"
+  ],
+  "author": "@xrdev_38",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "cpx2": "^6.0.1"
+  },
+  "peerDependencies": {}
+}

@@ -1,0 +1,46 @@
+@use "../foundations/functions" as fn;
+@use "../tokens/spacing" as *;
+
+// ============================================================================
+// Simple Grid System for Lemon (inspired by Atlassian Grid)
+// ============================================================================
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: fn.rem-calc($spacing-md);
+  padding-right: fn.rem-calc($spacing-md);
+
+  @media #{fn.breakpoint-up("md")} {
+    max-width: fn.rem-calc(720); // 720 → 45rem
+  }
+
+  @media #{fn.breakpoint-up("lg")} {
+    max-width: fn.rem-calc(960); // 960 → 60rem
+  }
+
+  @media #{fn.breakpoint-up("xl")} {
+    max-width: fn.rem-calc(1140); // 1140 → 71.25rem
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  // Wrap fn.rem-calc(...) in parentheses before negating
+  margin-left: -(fn.rem-calc($spacing-sm));
+  margin-right: -(fn.rem-calc($spacing-sm));
+}
+
+.col {
+  flex: 1 0 0%;
+  padding-left: fn.rem-calc($spacing-sm);
+  padding-right: fn.rem-calc($spacing-sm);
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}

@@ -1,0 +1,30 @@
+@use "sass:math";
+@use "sass:map";
+@use "../tokens/breakpoints" as *;
+
+// ============================================================================
+// rem-calc: Convert a unitless pixel value into rem (default base 16px)
+// ============================================================================
+// Example: rem-calc(12) => 0.75rem
+@function rem-calc($pixels, $base: 16) {
+  @return math.div($pixels, $base) * 1rem;
+}
+
+// ============================================================================
+// breakpoint-up: Return a media query string for a given breakpoint key
+// ============================================================================
+// Example: breakpoint-up("md") => "(min-width: 768px)"
+@function breakpoint-up($key) {
+  $value: map.get(
+    (
+      "xs": $breakpoint-xs,
+      "sm": $breakpoint-sm,
+      "md": $breakpoint-md,
+      "lg": $breakpoint-lg,
+      "xl": $breakpoint-xl
+    ),
+    $key
+  );
+
+  @return "(min-width: #{$value}px)";
+}

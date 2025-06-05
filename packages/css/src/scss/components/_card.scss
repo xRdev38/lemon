@@ -1,0 +1,37 @@
+// ============================================================================
+// Card Component Styles for Lemon
+// ============================================================================
+@use "../foundations/functions" as fn;
+@use "../tokens/colors" as *;
+@use "../tokens/spacing" as *;
+@use "../tokens/shadows" as *;
+@use "../tokens/typography" as *;
+
+.card {
+  background-color: $color-neutral-100;
+  border: 1px solid $color-neutral-300;
+  border-radius: fn.rem-calc(3);
+  box-shadow: $shadow-1;
+  padding: fn.rem-calc($spacing-md);
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: $shadow-2;
+  }
+
+  &__header {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    margin-bottom: fn.rem-calc($spacing-sm);
+  }
+
+  &__body {
+    font-size: $font-size-md;
+    color: $color-text-secondary;
+  }
+
+  &__footer {
+    margin-top: fn.rem-calc($spacing-sm);
+    text-align: right;
+  }
+}

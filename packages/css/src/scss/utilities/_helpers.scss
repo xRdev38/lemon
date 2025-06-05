@@ -1,0 +1,14 @@
+@use "../foundations/functions" as fn; // for rem-calc
+@use "../tokens/spacing" as *;
+
+// ============================================================================
+// Helper Utility Classes (text alignment, margin, padding…)
+// ============================================================================
+
+.u-text-center {
+  text-align: center !important;
+}
+
+.u-mb-sm {
+  margin-bottom: fn.rem-calc($spacing-sm) !important; // 12 -> 0.75rem
+}

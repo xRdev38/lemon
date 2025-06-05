@@ -1,0 +1,25 @@
+// ============================================================================
+// Typography Variables for Lemon (inspired by Atlassian)
+// ============================================================================
+
+// Font families
+$font-family-sans: "Segoe UI", roboto, "Helvetica Neue", arial, sans-serif !default;
+$font-family-mono: "SFMono-Regular", consolas, "Liberation Mono", menlo, monospace !default;
+
+// Font sizes (Atlassian-like scale)
+$font-size-xxs: 11px !default;
+$font-size-xs: 12px !default;
+$font-size-sm: 14px !default;
+$font-size-md: 16px !default;
+$font-size-lg: 20px !default;
+$font-size-xl: 24px !default;
+$font-size-xxl: 28px !default;
+
+// Line heights
+$line-height-text: 1.5 !default;
+$line-height-heading: 1.2 !default;
+
+// Font weights
+$font-weight-regular: 400 !default;
+$font-weight-medium: 500 !default;
+$font-weight-bold: 700 !default;

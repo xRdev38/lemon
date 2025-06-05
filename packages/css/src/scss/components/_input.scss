@@ -1,0 +1,29 @@
+// ============================================================================
+// Input (Form Field) Component Styles for Lemon
+// ============================================================================
+@use "../foundations/functions" as fn;
+@use "../tokens/colors" as *;
+@use "../tokens/spacing" as *;
+@use "../tokens/typography" as *;
+
+.input {
+  display: block;
+  width: 100%;
+  padding: fn.rem-calc($spacing-sm);
+  font-size: $font-size-sm;
+  border: 1px solid $color-neutral-400;
+  border-radius: fn.rem-calc(3);
+  background-color: #fff;
+  color: $color-text-primary;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: $color-brand-primary;
+    box-shadow: 0 0 0 3px rgba($color-brand-primary, 0.2);
+  }
+
+  &--error {
+    border-color: $color-danger;
+  }
+}

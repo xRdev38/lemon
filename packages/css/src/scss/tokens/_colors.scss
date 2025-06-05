@@ -1,0 +1,30 @@
+// ============================================================================
+// Color Palette for Lemon (inspired by Atlassian Design)
+// ============================================================================
+
+// Brand colors
+$color-brand-primary: #0052CC !default;       // primary blue
+$color-brand-primary-hover: #0065FF !default;
+$color-brand-primary-active: #0747A6 !default;
+
+// Neutral (grayscale)
+$color-neutral-100: #FAFBFC !default;         // lightest background
+$color-neutral-200: #F4F5F7 !default;
+$color-neutral-300: #EBECF0 !default;
+$color-neutral-400: #DFE1E6 !default;
+$color-neutral-500: #C1C7D0 !default;
+$color-neutral-600: #B3BAC5 !default;
+$color-neutral-700: #A5ADBA !default;
+$color-neutral-800: #97A0AF !default;
+$color-neutral-900: #8993A4 !default;         // darkest
+
+// Accent colors
+$color-success: #36B37E !default;             // green for success states
+$color-warning: #FFAB00 !default;             // yellow for warnings
+$color-danger: #DE350B !default;              // red for errors
+$color-info: #00B8D9 !default;                // light blue for info
+
+// Text
+$color-text-primary: $color-neutral-900 !default;
+$color-text-secondary: $color-neutral-700 !default;
+$color-text-disabled: $color-neutral-400 !default;
