@@ -1,6 +1,13 @@
 # @lemon/css
 
-SCSS-based design system for Lemon (inspired by Atlassian).
+Comprehensive SCSS-based design system for Lemon (inspired by Atlassian Design System).
+
+This package includes:
+
+- **Tokens**: Colors, typography, spacing, shadows, border-radius, opacity, breakpoints, z-index, elevation.
+- **Foundations**: Reset, mixins, functions.
+- **Utilities**: Helper classes, grid system, visibility helpers.
+- **Components**: Avatar, Badge, Button, Card, Checkbox, Dropdown, Input, Modal, Tabs, Toast, Tooltip.
 
 ## Installation
 
@@ -28,41 +35,40 @@ _or in HTML:_
 
 ### 2. Use the SCSS sources directly
 
-If you want to customize or extend variables/mixins:
+To customize or extend variables/mixins/components:
 
 ```scss
 @use "@lemon/css/src/scss/index" as *;
 ```
 
-This will import all tokens, foundations, utilities, and components into your build pipeline.
+This imports all tokens, foundations, utilities, and components from the SCSS source.
 
 ## Available Scripts
 
 From within the `packages/css` directory, you can run:
 
 - **`npm run build`**  
-  Compiles `src/scss/index.scss` into a single CSS file at `dist/lemon.css`.
+  Compiles the SCSS source into a single CSS file at `dist/lemon.css`.
   ```bash
   npm run build
   # or, at the monorepo root:
-  pnpm run build --filter=@lemon/css
+  pnpm run build --scope=@lemon/css
   ```
 
 - **`npm run lint`**  
-  Runs Stylelint on all SCSS files under `src/scss/`.  
-  Automatically fixes many warnings where possible.
+  Runs Stylelint on all SCSS files under `src/scss/`. Automatically fixes many warnings.
   ```bash
   npm run lint
   # or, at the monorepo root:
-  pnpm run lint --filter=@lemon/css
+  pnpm run lint --scope=@lemon/css
   ```
 
 - **`npm run test`**  
-  Runs Jest tests to ensure that SCSS compiles without errors and Stylelint passes.
+  Runs Jest tests to ensure SCSS compiles without errors and Stylelint passes.
   ```bash
   npm run test
   # or, at the monorepo root:
-  pnpm run test --filter=@lemon/css
+  pnpm run test --scope=@lemon/css
   ```
 
 ## File Structure
@@ -79,19 +85,31 @@ packages/css/
 │     │  ├─ _typography.scss
 │     │  ├─ _spacing.scss
 │     │  ├─ _shadows.scss
-│     │  └─ _breakpoints.scss
+│     │  ├─ _border-radius.scss
+│     │  ├─ _opacity.scss
+│     │  ├─ _breakpoints.scss
+│     │  ├─ _z-index.scss
+│     │  └─ _elevation.scss
 │     ├─ foundations/
 │     │  ├─ _reset.scss
 │     │  ├─ _mixins.scss
 │     │  └─ _functions.scss
 │     ├─ utilities/
-│     │  ├─ _visibility.scss
 │     │  ├─ _helpers.scss
-│     │  └─ _grid.scss
+│     │  ├─ _grid.scss
+│     │  └─ _visibility.scss
 │     ├─ components/
+│     │  ├─ _avatar.scss
+│     │  ├─ _badge.scss
 │     │  ├─ _button.scss
 │     │  ├─ _card.scss
-│     │  └─ _input.scss
+│     │  ├─ _checkbox.scss
+│     │  ├─ _dropdown.scss
+│     │  ├─ _input.scss
+│     │  ├─ _modal.scss
+│     │  ├─ _tabs.scss
+│     │  ├─ _toast.scss
+│     │  └─ _tooltip.scss
 │     └─ index.scss
 ├─ __tests__/
 │  └─ style.test.js
@@ -99,16 +117,25 @@ packages/css/
    └─ lemon.css
 ```
 
+- **`src/scss/tokens/`**: Token definitions (colors, typography, spacing, etc.).
+- **`src/scss/foundations/`**: Reset, mixins, and helper functions.
+- **`src/scss/utilities/`**: Utility classes (helpers, grid, visibility).
+- **`src/scss/components/`**: Modular component styles.
+- **`dist/lemon.css`**: Compiled CSS output.
+
 ## Contributing
 
 1. Fork the repository.
-2. Create your feature branch (`git checkout -b feature/your-feature`).
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/your-feature
+   ```
 3. Install dependencies and build CSS:
    ```bash
    pnpm install
    pnpm run build
    ```
-4. Make your changes, then test and lint:
+4. Make your changes, then lint and test:
    ```bash
    pnpm run lint
    pnpm run test
